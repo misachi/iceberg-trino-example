@@ -9,5 +9,10 @@ docker compose up
 
 Connect to the Trino controller to execute some SQL:
 ```shell
-docker exec -it example-controller trino
+docker compose exec controller trino
+```
+
+Stop and remove the containers and network:
+```shell
+docker compose down
 ```
