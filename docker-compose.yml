@@ -25,7 +25,7 @@ services:
       - 9000:9000
     command: ["server", "/data", "--console-address", ":9001"]
     healthcheck:
-      test: ["CMD-SHELL", "mc alias set minio http://localhost:9000 $${MINIO_ROOT_USER} $${MINIO_ROOT_PASSWORD} && mc mb minio/warehouse && mc anonymous set public minio/warehouse"]
+      test: ["CMD-SHELL", "mc alias set minio http://localhost:9000 $${MINIO_ROOT_USER} $${MINIO_ROOT_PASSWORD} && mc mb --ignore-existing minio/warehouse && mc anonymous set public minio/warehouse"]
       interval: 2s
       timeout: 2s
       retries: 5
