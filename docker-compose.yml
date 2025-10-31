@@ -2,7 +2,7 @@ version: '3'
 
 services:
 
-  controller:
+  trino_connector:
     image: 'trinodb/trino:444'
     hostname: trino
     volumes:
