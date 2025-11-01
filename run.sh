@@ -3,6 +3,9 @@
 set -e
 
 DOCKER_BRIDGE_INTERFACE=`ifconfig docker0 | grep -w "inet" | awk '{print $2}'`
+
+mkdir -p etc/catalog
+
 cat > ./etc/catalog/example_cat.properties << EOF
 # metastore
 # https://trino.io/docs/current/connector/iceberg.html
